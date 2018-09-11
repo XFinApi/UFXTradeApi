@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="UFXTradeApiSimpleDemoJavaIdeaIC2018_X64:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/UFXTradeApiSimpleDemoJavaIdeaIC2018_X64_jar</output-path>
+    <root id="archive" name="UFXTradeApiSimpleDemoJavaIdeaIC2018_X64.jar">
+      <element id="module-output" name="UFXTradeApiSimpleDemoJavaIdeaIC2018_X64" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../XTA_W64/Java/XFinApi.ITradeApi.DriverJava.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
