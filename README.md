@@ -21,7 +21,7 @@
 - XSpeed 大连飞创XSpeed柜台接口
 - ZDCTP 直达CTP平台，外盘交易接口
 - SHZD 直达交易接口
-- ZDCTP 易盛9.0北斗星期货期权交易平台，外盘
+- ESITap 易盛9.0北斗星期货期权交易平台，外盘
 - ESTap 易盛9.0启明星期货期权交易平台，内盘
 - LTS  华宝LTS，股票交易接口
 - SPNativeAPI   Sharp Point Limited 
