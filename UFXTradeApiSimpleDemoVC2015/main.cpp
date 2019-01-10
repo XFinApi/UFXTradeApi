@@ -85,7 +85,7 @@ public:
 
 		SendQueueSize = "100";
 
-		InstrumentID = "T1812";
+		InstrumentID = "T1903";
 		ExchangeID = "F4";
 	}
 };
@@ -186,9 +186,9 @@ static void  PrintPositionInfo(const XFinApi::TradeApi::Position &pos)
 
 static void  PrintAccountInfo(const XFinApi::TradeApi::Account &acc)
 {
-	printf("  AccountID=%s, StaticRights=%g, ChangingRights=%g, Available=%g, FrozenCash=%g, Commission=%g, CurrMargin=%g, CloseProfit=%g, PositionProfit=%g, Withdraw=%g, Deposit=%g\n", 
+	printf("  AccountID=%s, StaticBalance=%g, Balance=%g, Available=%g, FrozenCash=%g, Commission=%g, CurrMargin=%g, CloseProfit=%g, PositionProfit=%g, Withdraw=%g, Deposit=%g\n", 
 		acc.AccountID.c_str(),
-		DEFAULT_FILTER(acc.StaticRights), DEFAULT_FILTER(acc.ChangingRights), DEFAULT_FILTER(acc.Available), DEFAULT_FILTER(acc.FrozenCash),
+		DEFAULT_FILTER(acc.StaticBalance), DEFAULT_FILTER(acc.Balance), DEFAULT_FILTER(acc.Available), DEFAULT_FILTER(acc.FrozenCash),
 		DEFAULT_FILTER(acc.Commission), DEFAULT_FILTER(acc.CurrMargin), DEFAULT_FILTER(acc.CloseProfit), DEFAULT_FILTER(acc.PositionProfit), 
 		DEFAULT_FILTER(acc.Withdraw), DEFAULT_FILTER(acc.Deposit));
 }
@@ -384,9 +384,17 @@ void MarketTest()
 	//const char* path 指 xxx.exe 同级子目录中的 xxx.dll 文件
 	int err = -1;
 #ifdef _DEBUG
+#ifdef _WIN64
+	market = XFinApi_CreateMarketApi("XTA_W64/Api/UFX_V1.0.0.100/XFinApi.UFXTradeApid.dll", &err);
+#else
 	market = XFinApi_CreateMarketApi("XTA_W32/Api/UFX_V1.0.0.100/XFinApi.UFXTradeApid.dll", &err);
+#endif
+#else
+#ifdef _WIN64
+	market = XFinApi_CreateMarketApi("XTA_W64/Api/UFX_V1.0.0.100/XFinApi.UFXTradeApi.dll", &err);
 #else
 	market = XFinApi_CreateMarketApi("XTA_W32/Api/UFX_V1.0.0.100/XFinApi.UFXTradeApi.dll", &err);
+#endif
 #endif
 
 	if (err || !market)
@@ -440,9 +448,17 @@ void TradeTest()
 	//const char* path 指 xxx.exe 同级子目录中的 xxx.dll 文件
 	int err = -1;
 #ifdef _DEBUG
+#ifdef _WIN64
+	trade = XFinApi_CreateTradeApi("XTA_W64/Api/UFX_V1.0.0.100/XFinApi.UFXTradeApid.dll", &err);
+#else
 	trade = XFinApi_CreateTradeApi("XTA_W32/Api/UFX_V1.0.0.100/XFinApi.UFXTradeApid.dll", &err);
+#endif // _WIN64
+#else
+#ifdef _WIN64
+	trade = XFinApi_CreateTradeApi("XTA_W64/Api/UFX_V1.0.0.100/XFinApi.UFXTradeApi.dll", &err);
 #else
 	trade = XFinApi_CreateTradeApi("XTA_W32/Api/UFX_V1.0.0.100/XFinApi.UFXTradeApi.dll", &err);
+#endif // _WIN64
 #endif
 	if (err || !trade)
 	{

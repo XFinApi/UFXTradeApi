@@ -207,10 +207,10 @@ class TradeEvent(XFinApi_TradeApi.TradeListener):
 
     def OnQueryAccount(self,acc):
          print("- OnQueryAccount")
-         print(" AccountID={}, StaticRights={}, ChangingRights={}, Available={}, FrozenCash={}, Commission={}, "
+         print(" AccountID={}, StaticBalance={}, Balance={}, Available={}, FrozenCash={}, Commission={}, "
                "CurrMargin={}, CloseProfit={}, PositionProfit={}, Withdraw={}, Deposit={}"
                .format(acc.AccountID,
-				acc.StaticRights, acc.ChangingRights, acc.Available, acc.FrozenCash,
+				acc.StaticBalance, acc.Balance, acc.Available, acc.FrozenCash,
 				acc.Commission, acc.CurrMargin, acc.CloseProfit, acc.PositionProfit, 
 				acc.Withdraw, acc.Deposit))
 

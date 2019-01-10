@@ -148,9 +148,9 @@ static void  PrintPositionInfo(const XFinApi::TradeApi::Position &pos)
 
 static void  PrintAccountInfo(const XFinApi::TradeApi::Account &acc)
 {
-	printf("  AccountID=%s, StaticRights=%g, ChangingRights=%g, Available=%g, FrozenCash=%g, Commission=%g, CurrMargin=%g, CloseProfit=%g, PositionProfit=%g, Withdraw=%g, Deposit=%g\n", 
+	printf("  AccountID=%s, StaticBalance=%g, Balance=%g, Available=%g, FrozenCash=%g, Commission=%g, CurrMargin=%g, CloseProfit=%g, PositionProfit=%g, Withdraw=%g, Deposit=%g\n", 
 		acc.AccountID.c_str(),
-		DEFAULT_FILTER(acc.StaticRights), DEFAULT_FILTER(acc.ChangingRights), DEFAULT_FILTER(acc.Available), DEFAULT_FILTER(acc.FrozenCash),
+		DEFAULT_FILTER(acc.StaticBalance), DEFAULT_FILTER(acc.Balance), DEFAULT_FILTER(acc.Available), DEFAULT_FILTER(acc.FrozenCash),
 		DEFAULT_FILTER(acc.Commission), DEFAULT_FILTER(acc.CurrMargin), DEFAULT_FILTER(acc.CloseProfit), DEFAULT_FILTER(acc.PositionProfit), 
 		DEFAULT_FILTER(acc.Withdraw), DEFAULT_FILTER(acc.Deposit));
 }

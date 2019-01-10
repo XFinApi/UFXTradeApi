@@ -129,9 +129,9 @@ namespace UFXTradeApiSimpleDemoCSharpCore2017_X64
 
         static void PrintAccountInfo(Account acc)
         {
-            Console.WriteLine(string.Format("  AccountID={0}, StaticRights={1:g}, ChangingRights={2:g}, Available={3:g}, FrozenCash={4:g}, Commission={5:g}, CurrMargin={6:g}, CloseProfit={7:g}, PositionProfit={8:g}, Withdraw={9:g}, Deposit={10:g}",
+            Console.WriteLine(string.Format("  AccountID={0}, StaticBalance={1:g}, Balance={2:g}, Available={3:g}, FrozenCash={4:g}, Commission={5:g}, CurrMargin={6:g}, CloseProfit={7:g}, PositionProfit={8:g}, Withdraw={9:g}, Deposit={10:g}",
                 acc.AccountID,
-                acc.StaticRights, acc.ChangingRights, acc.Available, acc.FrozenCash,
+                acc.StaticBalance, acc.Balance, acc.Available, acc.FrozenCash,
                 acc.Commission, acc.CurrMargin, acc.CloseProfit, acc.PositionProfit,
                 acc.Withdraw, acc.Deposit));
         }
