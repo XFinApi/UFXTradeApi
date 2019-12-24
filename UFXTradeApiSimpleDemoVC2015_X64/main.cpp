@@ -85,7 +85,7 @@ public:
 
 		SendQueueSize = "100";
 
-		InstrumentID = "T1903";
+		InstrumentID = "T2003";
 		ExchangeID = "F4";
 	}
 };
